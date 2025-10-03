@@ -28,14 +28,17 @@ Validar el funcionamiento del componente Datepicker en: https://jqueryui.com/dat
 
 ## Estructura del Proyecto
 \`\`\`
-src/test/
-├── java/com/reto/datepicker/
-│   ├── runners/DatepickerTestRunner.java
-│   ├── stepdefinitions/DatepickerStepDefinitions.java
-│   ├── tasks/ (Screenplay - acciones del usuario)
-│   ├── questions/ (Screenplay - verificaciones)
-│   └── userinterfaces/ (Page Objects)
-└── resources/features/datepicker.feature
+datepicker-automation/
+├── src/test/
+│   ├── java/com/reto/datepicker/
+│   │   ├── runners/DatepickerTestRunner.java
+│   │   ├── stepdefinitions/DatepickerStepDefinitions.java  
+│   │   ├── tasks/ (SelectCurrentDay.java, SelectDayFromNextMonth.java, AttemptManualDateEntry.java)
+│   │   ├── questions/ (SelectedDate.java, DateFieldsEditable.java)
+│   │   └── userinterfaces/DatepickerPage.java
+│   └── resources/features/datepicker.feature
+├── pom.xml
+└── target/site/serenity/index.html (reporte)
 \`\`\`
 
 ## Ejecución
