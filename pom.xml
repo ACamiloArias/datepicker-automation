@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- INFORMACION BASICA DEL PROYECTO -->
+    <groupId>com.reto</groupId>          <!-- Grupo al que pertenece el proyecto -->
+    <artifactId>datepicker-automation</artifactId>  <!-- Nombre único del proyecto -->
+    <version>1.0.0</version>             <!-- Versión actual del proyecto -->
+
+    <!-- CONFIGURACIONES Y PROPIEDADES -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  <!-- Codificación para caracteres especiales -->
+        <serenity.version>3.9.8</serenity.version>          <!-- Versión de Serenity que usaremos -->
+        <serenity.cucumber.version>3.9.8</serenity.cucumber.version>  <!-- Versión para Cucumber -->
+        <java.version>11</java.version>                     <!-- Usaremos Java 11 -->
+    </properties>
+
+    <!-- BIBLIOTECAS QUE NECESITAMOS (DEPENDENCIAS) -->
+    <dependencies>
+        <!-- Biblioteca principal de Serenity BDD -->
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>     <!-- Grupo del fabricante -->
+            <artifactId>serenity-core</artifactId>  <!-- Nombre de la biblioteca -->
+            <version>${serenity.version}</version>  <!-- Usa la version definida arriba -->
+        </dependency>
+        
+        <!-- Para integrar Serenity con JUnit -->
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-junit</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+        
+        <!-- Para usar el patrón Screenplay (Actores, Tasks, Questions) -->
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-screenplay</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+        
+        <!-- Para integrar Serenity con Cucumber (archivos .feature) -->
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-cucumber</artifactId>
+            <version>${serenity.cucumber.version}</version>
+        </dependency>
+        
+        <!-- Para que Screenplay pueda controlar navegadores web -->
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-screenplay-webdriver</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+        
+        <!-- Selenium - para automatizar navegadores -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.8.0</version>
+        </dependency>
+    </dependencies>
+
+    <!-- HERRAMIENTAS DE CONSTRUCCION -->
+    <build>
+        <plugins>
+            <!-- Plugin para compilar el código Java -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>11</source>    <!-- Compilar con Java 11 -->
+                    <target>11</target>    <!-- Generar código para Java 11 -->
+                </configuration>
+            </plugin>
+            
+            <!-- Plugin de Serenity para generar reportes -->
+            <plugin>
+                <groupId>net.serenity-bdd.maven.plugins</groupId>
+                <artifactId>serenity-maven-plugin</artifactId>
+                <version>${serenity.version}</version>
+                <executions>
+                    <execution>
+                        <id>serenity-reports</id>
+                        <phase>post-integration-test</phase>  <!-- Ejecutar después de las pruebas -->
+                        <goals>
+                            <goal>aggregate</goal>  <!-- Generar reportes HTML bonitos -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
