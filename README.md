@@ -43,8 +43,8 @@ src/test/
 # Ejecutar pruebas y generar reporte
 mvn clean verify serenity:aggregate
 
-# Ejecutar con navegador específico
-mvn test -Dtest=DatepickerTestRunner -Dwebdriver.driver=firefox
+# Ejecutar
+mvn test -Dtest=DatepickerTestRunner 
 \`\`\`
 
 ## Reportes
