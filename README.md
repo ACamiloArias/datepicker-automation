@@ -1,32 +1,32 @@
 # Crear README.md
 @"
-# 🗓️ Automatización de JQuery Datepicker
+Automatización de JQuery Datepicker
 
-## 📋 Descripción
+Descripción
 Automatización de pruebas para el componente Datepicker de JQuery UI implementada con Serenity BDD y Screenplay Pattern.
 
-## 🎯 Objetivo
+Objetivo
 Validar el funcionamiento del componente Datepicker en: https://jqueryui.com/datepicker/
 
-## 🧪 Escenarios de Prueba
+## Escenarios de Prueba
 1. **Reserva de cita seleccionando fecha del mes actual**
 2. **Selección de fecha específica en próximo mes** 
 3. **Validación de campo bloqueado para edición manual**
 
-## 🏗️ Arquitectura
+## Arquitectura
 - **Screenplay Pattern** - Patrón moderno de automatización
 - **Serenity BDD** - Framework para pruebas aceptación
 - **Page Objects** - Separación de responsabilidades
 - **Cucumber** - BDD con Gherkin
 
-## 🛠️ Tecnologías
+## Tecnologías
 - Java 11
 - Serenity BDD 3.9.8
 - Cucumber 7.11.0
 - Selenium WebDriver 4.8.0
 - Maven
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 \`\`\`
 src/test/
 ├── java/com/reto/datepicker/
@@ -38,7 +38,7 @@ src/test/
 └── resources/features/datepicker.feature
 \`\`\`
 
-## ▶️ Ejecución
+## Ejecución
 \`\`\`bash
 # Ejecutar pruebas y generar reporte
 mvn clean verify serenity:aggregate
@@ -47,13 +47,6 @@ mvn clean verify serenity:aggregate
 mvn test -Dtest=DatepickerTestRunner -Dwebdriver.driver=firefox
 \`\`\`
 
-## 📊 Reportes
+## Reportes
 Los reportes Serenity BDD se generan en: \`target/site/serenity/index.html\`
 
-## 👨‍💻 Autor
-[Tu Nombre]
-"@ | Out-File -FilePath "README.md" -Encoding UTF8
-
-# Agregar README al repositorio
-git add README.md
-git commit -m "Agregar README.md con documentación del proyecto"
